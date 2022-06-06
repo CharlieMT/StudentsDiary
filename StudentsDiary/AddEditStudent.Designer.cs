@@ -29,34 +29,35 @@ namespace StudentsDiary
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.lbLastName = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lbMathematic = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.lbMath = new System.Windows.Forms.Label();
+            this.tbMath = new System.Windows.Forms.TextBox();
             this.lbPhysics = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbPhysics = new System.Windows.Forms.TextBox();
             this.lbTechnology = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbTechnology = new System.Windows.Forms.TextBox();
             this.lbPolishLanguage = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbPolishLanguage = new System.Windows.Forms.TextBox();
             this.lbForeignLanguage = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbForeignLanguage = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbComments = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbId
             // 
-            this.textBox1.Location = new System.Drawing.Point(175, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbId.Location = new System.Drawing.Point(175, 31);
+            this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
+            this.tbId.Size = new System.Drawing.Size(294, 20);
+            this.tbId.TabIndex = 0;
             // 
             // lbId
             // 
@@ -78,12 +79,12 @@ namespace StudentsDiary
             this.lbName.TabIndex = 3;
             this.lbName.Text = "Imie:";
             // 
-            // textBox2
+            // tbFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(175, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(294, 20);
-            this.textBox2.TabIndex = 2;
+            this.tbFirstName.Location = new System.Drawing.Point(175, 68);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(294, 20);
+            this.tbFirstName.TabIndex = 2;
             // 
             // lbLastName
             // 
@@ -95,29 +96,29 @@ namespace StudentsDiary
             this.lbLastName.TabIndex = 5;
             this.lbLastName.Text = "Nazwisko:";
             // 
-            // textBox3
+            // tbLastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(175, 107);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(294, 20);
-            this.textBox3.TabIndex = 4;
+            this.tbLastName.Location = new System.Drawing.Point(175, 107);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(294, 20);
+            this.tbLastName.TabIndex = 4;
             // 
-            // lbMathematic
+            // lbMath
             // 
-            this.lbMathematic.AutoSize = true;
-            this.lbMathematic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbMathematic.Location = new System.Drawing.Point(12, 147);
-            this.lbMathematic.Name = "lbMathematic";
-            this.lbMathematic.Size = new System.Drawing.Size(100, 20);
-            this.lbMathematic.TabIndex = 7;
-            this.lbMathematic.Text = "Matematyka:";
+            this.lbMath.AutoSize = true;
+            this.lbMath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbMath.Location = new System.Drawing.Point(12, 147);
+            this.lbMath.Name = "lbMath";
+            this.lbMath.Size = new System.Drawing.Size(100, 20);
+            this.lbMath.TabIndex = 7;
+            this.lbMath.Text = "Matematyka:";
             // 
-            // textBox4
+            // tbMath
             // 
-            this.textBox4.Location = new System.Drawing.Point(175, 147);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(294, 20);
-            this.textBox4.TabIndex = 6;
+            this.tbMath.Location = new System.Drawing.Point(175, 147);
+            this.tbMath.Name = "tbMath";
+            this.tbMath.Size = new System.Drawing.Size(294, 20);
+            this.tbMath.TabIndex = 6;
             // 
             // lbPhysics
             // 
@@ -129,12 +130,12 @@ namespace StudentsDiary
             this.lbPhysics.TabIndex = 9;
             this.lbPhysics.Text = "Fizyka:";
             // 
-            // textBox5
+            // tbPhysics
             // 
-            this.textBox5.Location = new System.Drawing.Point(175, 187);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(294, 20);
-            this.textBox5.TabIndex = 8;
+            this.tbPhysics.Location = new System.Drawing.Point(175, 187);
+            this.tbPhysics.Name = "tbPhysics";
+            this.tbPhysics.Size = new System.Drawing.Size(294, 20);
+            this.tbPhysics.TabIndex = 8;
             // 
             // lbTechnology
             // 
@@ -146,12 +147,12 @@ namespace StudentsDiary
             this.lbTechnology.TabIndex = 11;
             this.lbTechnology.Text = "Technologia:";
             // 
-            // textBox6
+            // tbTechnology
             // 
-            this.textBox6.Location = new System.Drawing.Point(175, 227);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(294, 20);
-            this.textBox6.TabIndex = 10;
+            this.tbTechnology.Location = new System.Drawing.Point(175, 227);
+            this.tbTechnology.Name = "tbTechnology";
+            this.tbTechnology.Size = new System.Drawing.Size(294, 20);
+            this.tbTechnology.TabIndex = 10;
             // 
             // lbPolishLanguage
             // 
@@ -163,12 +164,12 @@ namespace StudentsDiary
             this.lbPolishLanguage.TabIndex = 13;
             this.lbPolishLanguage.Text = "J.Polski";
             // 
-            // textBox7
+            // tbPolishLanguage
             // 
-            this.textBox7.Location = new System.Drawing.Point(175, 267);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(294, 20);
-            this.textBox7.TabIndex = 12;
+            this.tbPolishLanguage.Location = new System.Drawing.Point(175, 267);
+            this.tbPolishLanguage.Name = "tbPolishLanguage";
+            this.tbPolishLanguage.Size = new System.Drawing.Size(294, 20);
+            this.tbPolishLanguage.TabIndex = 12;
             // 
             // lbForeignLanguage
             // 
@@ -180,12 +181,12 @@ namespace StudentsDiary
             this.lbForeignLanguage.TabIndex = 15;
             this.lbForeignLanguage.Text = "J.Obcy";
             // 
-            // textBox8
+            // tbForeignLanguage
             // 
-            this.textBox8.Location = new System.Drawing.Point(175, 307);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(294, 20);
-            this.textBox8.TabIndex = 14;
+            this.tbForeignLanguage.Location = new System.Drawing.Point(175, 307);
+            this.tbForeignLanguage.Name = "tbForeignLanguage";
+            this.tbForeignLanguage.Size = new System.Drawing.Size(294, 20);
+            this.tbForeignLanguage.TabIndex = 14;
             // 
             // richTextBox1
             // 
@@ -214,6 +215,7 @@ namespace StudentsDiary
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAccept
             // 
@@ -224,6 +226,7 @@ namespace StudentsDiary
             this.btnAccept.TabIndex = 19;
             this.btnAccept.Text = "Zatwierdz";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // AddEditStudent
             // 
@@ -235,21 +238,21 @@ namespace StudentsDiary
             this.Controls.Add(this.lbComments);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lbForeignLanguage);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tbForeignLanguage);
             this.Controls.Add(this.lbPolishLanguage);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tbPolishLanguage);
             this.Controls.Add(this.lbTechnology);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tbTechnology);
             this.Controls.Add(this.lbPhysics);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.lbMathematic);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbPhysics);
+            this.Controls.Add(this.lbMath);
+            this.Controls.Add(this.tbMath);
             this.Controls.Add(this.lbLastName);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.lbName);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbId);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbId);
             this.Name = "AddEditStudent";
             this.Text = "AddEditStudent";
             this.ResumeLayout(false);
@@ -259,22 +262,22 @@ namespace StudentsDiary
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label lbLastName;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lbMathematic;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.Label lbMath;
+        private System.Windows.Forms.TextBox tbMath;
         private System.Windows.Forms.Label lbPhysics;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbPhysics;
         private System.Windows.Forms.Label lbTechnology;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbTechnology;
         private System.Windows.Forms.Label lbPolishLanguage;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbPolishLanguage;
         private System.Windows.Forms.Label lbForeignLanguage;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbForeignLanguage;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lbComments;
         private System.Windows.Forms.Button btnCancel;
