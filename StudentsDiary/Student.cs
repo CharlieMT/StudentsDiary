@@ -17,5 +17,6 @@ namespace StudentsDiary
         public string Physics { get; set; }
         public string PolishLanguage { get; set; }
         public string ForeignLanguage { get; set; }
+
     }
 }

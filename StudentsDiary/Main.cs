@@ -155,5 +155,10 @@ namespace StudentsDiary
         {
             RefreshDiary();
         }
+
+        private void dgvDiary_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
