@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -69,7 +70,7 @@ namespace StudentsDiary
             Close();
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
+        private async void btnAccept_Click(object sender, EventArgs e)
         {
             var students = _fileHelper.DeserializeFromFile();
 
@@ -82,7 +83,15 @@ namespace StudentsDiary
 
             _fileHelper.SerializeToFile(students);
 
+            await LongProcessAsync();
+
             Close();
+        }
+
+        private async Task LongProcessAsync()
+        {
+            await Task.Run(() => Thread.Sleep(4000));
+            
         }
 
         private void AddNewStudentToList(List<Student> students)
