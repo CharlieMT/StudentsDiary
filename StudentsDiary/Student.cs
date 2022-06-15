@@ -8,6 +8,7 @@ namespace StudentsDiary
 {
     public class Student
     {
+        public string GroupNumber { get; set; }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,6 +18,9 @@ namespace StudentsDiary
         public string Physics { get; set; }
         public string PolishLanguage { get; set; }
         public string ForeignLanguage { get; set; }
+        public bool AdditionalExercises { get; set; }
+
+        public List<string> AdditionalExercisesList { get; set; }
 
     }
 }

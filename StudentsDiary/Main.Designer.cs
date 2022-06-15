@@ -35,6 +35,8 @@ namespace StudentsDiary
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary1 = new System.Windows.Forms.DataGridView();
+            this.cbxStudentGroupFilter = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,12 +106,31 @@ namespace StudentsDiary
             this.dgvDiary1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiary1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgvDiary1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiary1.Location = new System.Drawing.Point(12, 80);
+            this.dgvDiary1.Location = new System.Drawing.Point(12, 116);
             this.dgvDiary1.Name = "dgvDiary1";
             this.dgvDiary1.RowHeadersVisible = false;
             this.dgvDiary1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiary1.Size = new System.Drawing.Size(1232, 602);
+            this.dgvDiary1.Size = new System.Drawing.Size(1232, 566);
             this.dgvDiary1.TabIndex = 4;
+            // 
+            // cbxStudentGroupFilter
+            // 
+            this.cbxStudentGroupFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbxStudentGroupFilter.FormattingEnabled = true;
+            this.cbxStudentGroupFilter.Location = new System.Drawing.Point(141, 79);
+            this.cbxStudentGroupFilter.Name = "cbxStudentGroupFilter";
+            this.cbxStudentGroupFilter.Size = new System.Drawing.Size(137, 28);
+            this.cbxStudentGroupFilter.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(13, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Wybór Grupy :";
             // 
             // dgvDiary
             // 
@@ -117,6 +138,8 @@ namespace StudentsDiary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1264, 721);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxStudentGroupFilter);
             this.Controls.Add(this.dgvDiary1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
@@ -124,9 +147,9 @@ namespace StudentsDiary
             this.Controls.Add(this.btnAdd);
             this.Name = "dgvDiary";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.dgvDiary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,6 +160,8 @@ namespace StudentsDiary
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvDiary1;
+        private System.Windows.Forms.ComboBox cbxStudentGroupFilter;
+        private System.Windows.Forms.Label label1;
     }
 }
 
