@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace StudentsDiary
 {
@@ -21,17 +15,45 @@ namespace StudentsDiary
 
         private Student _student;
 
+        private AdditionalResourcesHelper additionalResourcesHelper = new AdditionalResourcesHelper();
+
+        private List<string> studentChoosenExercises;
+
         public AddEditStudent(int id = 0)
         {
-
             _studentID = id;
-
+            var groupsList = additionalResourcesHelper.StudentGroupList;
             InitializeComponent();
+
+            cbGroupNumber.DataSource = groupsList;
 
             GetStudentData();
 
             tbFirstName.Select();
         }
+
+
+        private void SetAvailableAdditionalExercisesList()
+        {
+            var availabelExercisesList = new List<string>(additionalResourcesHelper.FullListOfAdditionalExercises);
+
+            foreach (var item in studentChoosenExercises)
+            {
+                if (availabelExercisesList.Contains(item))
+                    availabelExercisesList.Remove(item);
+            }
+
+            lbxAvailableExerciseList.DataSource = null;
+            lbxAvailableExerciseList.DataSource = availabelExercisesList;
+
+            lbxChoosenExercises.DataSource = null;
+            lbxChoosenExercises.DataSource = studentChoosenExercises;
+
+            if (checkIflbxChoosenExerciseIsNotNull())
+                lbxChoosenExercises.SetSelected(0, true);
+        }
+
+
 
         private void GetStudentData()
         {
@@ -41,18 +63,26 @@ namespace StudentsDiary
 
                 var students = _fileHelper.DeserializeFromFile();
                 _student = students.FirstOrDefault(x => x.Id == _studentID);
-
+                studentChoosenExercises = _student.AdditionalExercisesList;
+                SetAvailabilityForAdditionalExercisesFields(_student.AdditionalExercises);
                 if (_student == null)
                 {
                     throw new Exception("Brak ucznia o podanym ID");
                 }
 
                 FillTextBoxes();
+
             }
+
+            studentChoosenExercises = new List<string>();
+            SetAvailabilityForAdditionalExercisesFields(false);
+
+            SetAvailableAdditionalExercisesList();
         }
 
         private void FillTextBoxes()
         {
+            cbGroupNumber.Text = _student.GroupNumber;
             tbId.Text = _student.Id.ToString();
             tbFirstName.Text = _student.FirstName;
             tbLastName.Text = _student.LastName;
@@ -62,6 +92,8 @@ namespace StudentsDiary
             tbPhysics.Text = _student.Physics;
             tbPolishLanguage.Text = _student.PolishLanguage;
             tbForeignLanguage.Text = _student.ForeignLanguage;
+            ckbAdditionalExercises.Checked = _student.AdditionalExercises;
+            lbxChoosenExercises.DataSource = _student.AdditionalExercisesList;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -89,6 +121,7 @@ namespace StudentsDiary
         {
             var student = new Student
             {
+                GroupNumber = cbGroupNumber.Text,
                 Id = _studentID,
                 FirstName = tbFirstName.Text,
                 LastName = tbLastName.Text,
@@ -97,7 +130,9 @@ namespace StudentsDiary
                 Technology = tbTechnology.Text,
                 Physics = tbPhysics.Text,
                 PolishLanguage = tbPolishLanguage.Text,
-                ForeignLanguage = tbForeignLanguage.Text
+                ForeignLanguage = tbForeignLanguage.Text,
+                AdditionalExercises = ckbAdditionalExercises.Checked,
+                AdditionalExercisesList = studentChoosenExercises
 
             };
 
@@ -106,25 +141,55 @@ namespace StudentsDiary
 
         private void AssigneIdToNewStudent(List<Student> students)
         {
-            var studentWithHighestID = students.OrderByDescending(x => x.Id).FirstOrDefault();
-
-            //var studentId = 0;
-
-            //if(studentWithHighestID == null)
-            //{
-            //    studentId = 1;
-            //}
-            //else
-            //{
-            //    studentId = studentWithHighestID.Id + 1;
-            //}
+            var studentWithHighestID = students.Where(x => x.GroupNumber == cbGroupNumber.Text).OrderByDescending(x => x.Id).FirstOrDefault();
 
             _studentID = studentWithHighestID == null ? 1 : studentWithHighestID.Id + 1;
         }
 
-        private void AddEditStudent_Load(object sender, EventArgs e)
+        private void btnAddExercise_Click(object sender, EventArgs e)
         {
+            studentChoosenExercises.Add(lbxAvailableExerciseList.SelectedItem.ToString());
 
+            SetAvailableAdditionalExercisesList();
+        }
+
+        private void btnDeleteExercise_Click(object sender, EventArgs e)
+        {
+            if (checkIflbxChoosenExerciseIsNotNull() && studentChoosenExercises.Contains(lbxChoosenExercises.SelectedItem.ToString()))
+                studentChoosenExercises.Remove(lbxChoosenExercises.SelectedItem.ToString());
+
+            SetAvailableAdditionalExercisesList();
+        }
+
+        private bool checkIflbxChoosenExerciseIsNotNull()
+        {
+            if (lbxChoosenExercises.Items.Count >= 1)
+                return true;
+
+            return false;
+        }
+
+        private void ckbAdditionalExercises_Click(object sender, EventArgs e)
+        {
+            SetAvailabilityForAdditionalExercisesFields(ckbAdditionalExercises.Checked);
+        }
+
+        private void SetAvailabilityForAdditionalExercisesFields(bool status)
+        {
+            if (status)
+            {
+                lbxAvailableExerciseList.Enabled = true;
+                lbxChoosenExercises.Enabled = true;
+                btnAddExercise.Enabled = true;
+                btnDeleteExercise.Enabled = true;
+            }
+            else
+            {
+                lbxAvailableExerciseList.Enabled = false;
+                lbxChoosenExercises.Enabled = false;
+                btnAddExercise.Enabled = false;
+                btnDeleteExercise.Enabled = false;
+            }
         }
     }
 }

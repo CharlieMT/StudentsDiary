@@ -49,11 +49,18 @@ namespace StudentsDiary
             this.lbComments = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.ckbAdditionalExercises = new System.Windows.Forms.CheckBox();
+            this.btnAddExercise = new System.Windows.Forms.Button();
+            this.lbxAvailableExerciseList = new System.Windows.Forms.ListBox();
+            this.lbxChoosenExercises = new System.Windows.Forms.ListBox();
+            this.btnDeleteExercise = new System.Windows.Forms.Button();
+            this.lbGroupNumber = new System.Windows.Forms.Label();
+            this.cbGroupNumber = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(175, 31);
+            this.tbId.Location = new System.Drawing.Point(175, 83);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(294, 20);
@@ -63,17 +70,17 @@ namespace StudentsDiary
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbId.Location = new System.Drawing.Point(12, 31);
+            this.lbId.Location = new System.Drawing.Point(17, 83);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(27, 20);
+            this.lbId.Size = new System.Drawing.Size(80, 20);
             this.lbId.TabIndex = 1;
-            this.lbId.Text = "Id:";
+            this.lbId.Text = "Id Ucznia:";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbName.Location = new System.Drawing.Point(12, 68);
+            this.lbName.Location = new System.Drawing.Point(17, 124);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(43, 20);
             this.lbName.TabIndex = 3;
@@ -81,7 +88,7 @@ namespace StudentsDiary
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(175, 68);
+            this.tbFirstName.Location = new System.Drawing.Point(175, 124);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(294, 20);
             this.tbFirstName.TabIndex = 2;
@@ -90,7 +97,7 @@ namespace StudentsDiary
             // 
             this.lbLastName.AutoSize = true;
             this.lbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbLastName.Location = new System.Drawing.Point(12, 107);
+            this.lbLastName.Location = new System.Drawing.Point(17, 160);
             this.lbLastName.Name = "lbLastName";
             this.lbLastName.Size = new System.Drawing.Size(80, 20);
             this.lbLastName.TabIndex = 5;
@@ -98,7 +105,7 @@ namespace StudentsDiary
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(175, 107);
+            this.tbLastName.Location = new System.Drawing.Point(175, 160);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(294, 20);
             this.tbLastName.TabIndex = 4;
@@ -107,7 +114,7 @@ namespace StudentsDiary
             // 
             this.lbMath.AutoSize = true;
             this.lbMath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbMath.Location = new System.Drawing.Point(12, 147);
+            this.lbMath.Location = new System.Drawing.Point(17, 198);
             this.lbMath.Name = "lbMath";
             this.lbMath.Size = new System.Drawing.Size(100, 20);
             this.lbMath.TabIndex = 7;
@@ -115,7 +122,7 @@ namespace StudentsDiary
             // 
             // tbMath
             // 
-            this.tbMath.Location = new System.Drawing.Point(175, 147);
+            this.tbMath.Location = new System.Drawing.Point(175, 198);
             this.tbMath.Name = "tbMath";
             this.tbMath.Size = new System.Drawing.Size(294, 20);
             this.tbMath.TabIndex = 6;
@@ -124,7 +131,7 @@ namespace StudentsDiary
             // 
             this.lbPhysics.AutoSize = true;
             this.lbPhysics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbPhysics.Location = new System.Drawing.Point(12, 187);
+            this.lbPhysics.Location = new System.Drawing.Point(17, 241);
             this.lbPhysics.Name = "lbPhysics";
             this.lbPhysics.Size = new System.Drawing.Size(58, 20);
             this.lbPhysics.TabIndex = 9;
@@ -132,7 +139,7 @@ namespace StudentsDiary
             // 
             // tbPhysics
             // 
-            this.tbPhysics.Location = new System.Drawing.Point(175, 187);
+            this.tbPhysics.Location = new System.Drawing.Point(175, 241);
             this.tbPhysics.Name = "tbPhysics";
             this.tbPhysics.Size = new System.Drawing.Size(294, 20);
             this.tbPhysics.TabIndex = 8;
@@ -141,7 +148,7 @@ namespace StudentsDiary
             // 
             this.lbTechnology.AutoSize = true;
             this.lbTechnology.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbTechnology.Location = new System.Drawing.Point(12, 227);
+            this.lbTechnology.Location = new System.Drawing.Point(12, 282);
             this.lbTechnology.Name = "lbTechnology";
             this.lbTechnology.Size = new System.Drawing.Size(99, 20);
             this.lbTechnology.TabIndex = 11;
@@ -149,7 +156,7 @@ namespace StudentsDiary
             // 
             // tbTechnology
             // 
-            this.tbTechnology.Location = new System.Drawing.Point(175, 227);
+            this.tbTechnology.Location = new System.Drawing.Point(175, 282);
             this.tbTechnology.Name = "tbTechnology";
             this.tbTechnology.Size = new System.Drawing.Size(294, 20);
             this.tbTechnology.TabIndex = 10;
@@ -158,7 +165,7 @@ namespace StudentsDiary
             // 
             this.lbPolishLanguage.AutoSize = true;
             this.lbPolishLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbPolishLanguage.Location = new System.Drawing.Point(12, 267);
+            this.lbPolishLanguage.Location = new System.Drawing.Point(17, 326);
             this.lbPolishLanguage.Name = "lbPolishLanguage";
             this.lbPolishLanguage.Size = new System.Drawing.Size(62, 20);
             this.lbPolishLanguage.TabIndex = 13;
@@ -166,7 +173,7 @@ namespace StudentsDiary
             // 
             // tbPolishLanguage
             // 
-            this.tbPolishLanguage.Location = new System.Drawing.Point(175, 267);
+            this.tbPolishLanguage.Location = new System.Drawing.Point(175, 326);
             this.tbPolishLanguage.Name = "tbPolishLanguage";
             this.tbPolishLanguage.Size = new System.Drawing.Size(294, 20);
             this.tbPolishLanguage.TabIndex = 12;
@@ -175,7 +182,7 @@ namespace StudentsDiary
             // 
             this.lbForeignLanguage.AutoSize = true;
             this.lbForeignLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbForeignLanguage.Location = new System.Drawing.Point(12, 307);
+            this.lbForeignLanguage.Location = new System.Drawing.Point(17, 375);
             this.lbForeignLanguage.Name = "lbForeignLanguage";
             this.lbForeignLanguage.Size = new System.Drawing.Size(57, 20);
             this.lbForeignLanguage.TabIndex = 15;
@@ -183,14 +190,14 @@ namespace StudentsDiary
             // 
             // tbForeignLanguage
             // 
-            this.tbForeignLanguage.Location = new System.Drawing.Point(175, 307);
+            this.tbForeignLanguage.Location = new System.Drawing.Point(175, 375);
             this.tbForeignLanguage.Name = "tbForeignLanguage";
             this.tbForeignLanguage.Size = new System.Drawing.Size(294, 20);
             this.tbForeignLanguage.TabIndex = 14;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(175, 353);
+            this.richTextBox1.Location = new System.Drawing.Point(175, 433);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(294, 96);
             this.richTextBox1.TabIndex = 16;
@@ -200,7 +207,7 @@ namespace StudentsDiary
             // 
             this.lbComments.AutoSize = true;
             this.lbComments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbComments.Location = new System.Drawing.Point(17, 353);
+            this.lbComments.Location = new System.Drawing.Point(17, 433);
             this.lbComments.Name = "lbComments";
             this.lbComments.Size = new System.Drawing.Size(57, 20);
             this.lbComments.TabIndex = 17;
@@ -209,7 +216,7 @@ namespace StudentsDiary
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCancel.Location = new System.Drawing.Point(175, 470);
+            this.btnCancel.Location = new System.Drawing.Point(175, 553);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(134, 37);
             this.btnCancel.TabIndex = 18;
@@ -220,7 +227,7 @@ namespace StudentsDiary
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAccept.Location = new System.Drawing.Point(335, 470);
+            this.btnAccept.Location = new System.Drawing.Point(335, 553);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(134, 37);
             this.btnAccept.TabIndex = 19;
@@ -228,11 +235,86 @@ namespace StudentsDiary
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
+            // ckbAdditionalExercises
+            // 
+            this.ckbAdditionalExercises.AutoSize = true;
+            this.ckbAdditionalExercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbAdditionalExercises.Location = new System.Drawing.Point(163, 615);
+            this.ckbAdditionalExercises.Name = "ckbAdditionalExercises";
+            this.ckbAdditionalExercises.Size = new System.Drawing.Size(164, 24);
+            this.ckbAdditionalExercises.TabIndex = 20;
+            this.ckbAdditionalExercises.Text = "Dodatkowe Zajecia";
+            this.ckbAdditionalExercises.UseVisualStyleBackColor = true;
+            this.ckbAdditionalExercises.Click += new System.EventHandler(this.ckbAdditionalExercises_Click);
+            // 
+            // btnAddExercise
+            // 
+            this.btnAddExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddExercise.Location = new System.Drawing.Point(208, 645);
+            this.btnAddExercise.Name = "btnAddExercise";
+            this.btnAddExercise.Size = new System.Drawing.Size(75, 30);
+            this.btnAddExercise.TabIndex = 22;
+            this.btnAddExercise.Text = "Add>>";
+            this.btnAddExercise.UseVisualStyleBackColor = true;
+            this.btnAddExercise.Click += new System.EventHandler(this.btnAddExercise_Click);
+            // 
+            // lbxAvailableExerciseList
+            // 
+            this.lbxAvailableExerciseList.FormattingEnabled = true;
+            this.lbxAvailableExerciseList.Location = new System.Drawing.Point(21, 645);
+            this.lbxAvailableExerciseList.Name = "lbxAvailableExerciseList";
+            this.lbxAvailableExerciseList.Size = new System.Drawing.Size(169, 95);
+            this.lbxAvailableExerciseList.TabIndex = 23;
+            // 
+            // lbxChoosenExercises
+            // 
+            this.lbxChoosenExercises.FormattingEnabled = true;
+            this.lbxChoosenExercises.Location = new System.Drawing.Point(300, 645);
+            this.lbxChoosenExercises.Name = "lbxChoosenExercises";
+            this.lbxChoosenExercises.Size = new System.Drawing.Size(169, 95);
+            this.lbxChoosenExercises.TabIndex = 24;
+            // 
+            // btnDeleteExercise
+            // 
+            this.btnDeleteExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeleteExercise.Location = new System.Drawing.Point(208, 710);
+            this.btnDeleteExercise.Name = "btnDeleteExercise";
+            this.btnDeleteExercise.Size = new System.Drawing.Size(75, 30);
+            this.btnDeleteExercise.TabIndex = 25;
+            this.btnDeleteExercise.Text = "<<Del";
+            this.btnDeleteExercise.UseVisualStyleBackColor = true;
+            this.btnDeleteExercise.Click += new System.EventHandler(this.btnDeleteExercise_Click);
+            // 
+            // lbGroupNumber
+            // 
+            this.lbGroupNumber.AutoSize = true;
+            this.lbGroupNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbGroupNumber.Location = new System.Drawing.Point(17, 47);
+            this.lbGroupNumber.Name = "lbGroupNumber";
+            this.lbGroupNumber.Size = new System.Drawing.Size(99, 20);
+            this.lbGroupNumber.TabIndex = 26;
+            this.lbGroupNumber.Text = "NumerGrupy";
+            // 
+            // cbGroupNumber
+            // 
+            this.cbGroupNumber.FormattingEnabled = true;
+            this.cbGroupNumber.Location = new System.Drawing.Point(175, 47);
+            this.cbGroupNumber.Name = "cbGroupNumber";
+            this.cbGroupNumber.Size = new System.Drawing.Size(152, 21);
+            this.cbGroupNumber.TabIndex = 27;
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 561);
+            this.ClientSize = new System.Drawing.Size(496, 761);
+            this.Controls.Add(this.cbGroupNumber);
+            this.Controls.Add(this.lbGroupNumber);
+            this.Controls.Add(this.btnDeleteExercise);
+            this.Controls.Add(this.lbxChoosenExercises);
+            this.Controls.Add(this.lbxAvailableExerciseList);
+            this.Controls.Add(this.btnAddExercise);
+            this.Controls.Add(this.ckbAdditionalExercises);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbComments);
@@ -253,12 +335,11 @@ namespace StudentsDiary
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.tbId);
-            this.MaximumSize = new System.Drawing.Size(512, 600);
-            this.MinimumSize = new System.Drawing.Size(512, 600);
+            this.MaximumSize = new System.Drawing.Size(512, 800);
+            this.MinimumSize = new System.Drawing.Size(512, 800);
             this.Name = "AddEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DodawanieUcznia";
-            this.Load += new System.EventHandler(this.AddEditStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +367,12 @@ namespace StudentsDiary
         private System.Windows.Forms.Label lbComments;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.CheckBox ckbAdditionalExercises;
+        private System.Windows.Forms.Button btnAddExercise;
+        private System.Windows.Forms.ListBox lbxAvailableExerciseList;
+        private System.Windows.Forms.ListBox lbxChoosenExercises;
+        private System.Windows.Forms.Button btnDeleteExercise;
+        private System.Windows.Forms.Label lbGroupNumber;
+        private System.Windows.Forms.ComboBox cbGroupNumber;
     }
 }
